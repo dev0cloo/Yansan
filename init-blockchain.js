@@ -6,4 +6,5 @@ const genesisBlock = { hash: '0', previousHash: null };
 // array of blocks the blockchain has
 const blockchain = [genesisBlock];
 
+//
 writeBlockchain(blockchain);
