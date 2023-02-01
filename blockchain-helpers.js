@@ -34,6 +34,7 @@ export function writeTransactions(transactions) {
   writeFileSync('./transactions.json', transactionsString);
 }
 
+// gets the current transactions in the transaction pool
 export function getTransactions() {
   const transactionsFile = readFileSync('./transactions.json');
   const transactions = JSON.parse(transactionsFile);
