@@ -6,7 +6,6 @@ Yansan is a blockchain platform that lets you simulate transactions between user
 - Simulate transactions between users.
 - Add new blocks to the blockchain.
 - Validate the integrity of the blockchain.
-- Written in JavaScript, a popular and accessible programming language.
 
 ## Requirements
 - Node.js installed.
