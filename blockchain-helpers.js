@@ -7,7 +7,7 @@ export function writeBlockchain(blockchain) {
   writeFileSync("./blockchain.json", blockchainString);
 }
 
-// reads the current state of the blockchain
+// read the current state of the blockchain
 export function getBlockchain() {
   const blockchainFile = readFileSync("./blockchain.json");
   const blockchain = JSON.parse(blockchainFile);
@@ -35,17 +35,33 @@ export function isValidChain() {
     if (hash !== testBlockHash) {
       return false;
     }
+
+    // loop through transactions
+    for (let j = 0; j < transactions.length; j++) {
+      const { hash, fromAddress, toAddress, amount } = transactions[j];
+      const testTransactionHash = sha256(
+        fromAddress + toAddress + amount
+      ).toString();
+
+      // don't validate rewarded transactions
+      if (fromAddress != null) {
+        // validate transaction hash
+        if (hash !== testTransactionHash) {
+          return false;
+        }
+      }
+    }
   }
   return true;
 }
 
-// records transactions to the transaction pool
+// record transactions to transaction pool
 export function writeTransactions(transactions) {
   const transactionsString = JSON.stringify(transactions, null, 2);
   writeFileSync("./transactions.json", transactionsString);
 }
 
-// gets the current transactions in the transaction pool
+// get current transactions in the transaction pool
 export function getTransactions() {
   const transactionsFile = readFileSync("./transactions.json");
   const transactions = JSON.parse(transactionsFile);

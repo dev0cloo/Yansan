@@ -48,7 +48,7 @@ blockchain.push(newBlock);
 
 // mine new block
 writeBlockchain(blockchain);
-console.log("mining new block to blockchain");
+console.log("Mining new block to blockchain");
 
 // reward miner after each new block is mined
 const fromAddress = null;
