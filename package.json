@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/dev0cloo/Yansan/issues"
   },
-  "homepage": "https://github.com/dev0cloo/Yansan#readme"
+  "homepage": "https://github.com/dev0cloo/Yansan#readme",
+  "dependencies": {
+    "crypto-js": "^4.1.1"
+  }
 }
