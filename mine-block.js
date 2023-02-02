@@ -51,9 +51,6 @@ writeBlockchain(blockchain);
 console.log("Mining new block to blockchain");
 
 // reward miner after each new block is mined
-const fromAddress = null;
-const toAddress = "Me";
-const amount = 50;
-const rewardTransaction = { fromAddress, toAddress, amount };
+const rewardTransaction = { fromAddress: null, toAddress: "Me", amount: 50 };
 writeTransactions([rewardTransaction]);
 console.log("Rewarding Miner and Resetting Transaction pool");

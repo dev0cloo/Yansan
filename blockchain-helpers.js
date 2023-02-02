@@ -1,5 +1,6 @@
 import { writeFileSync, readFileSync } from "fs";
 import sha256 from "crypto-js/sha256.js";
+import { get } from "http";
 
 // modifies the current state of the blockchain
 export function writeBlockchain(blockchain) {
@@ -66,4 +67,29 @@ export function getTransactions() {
   const transactionsFile = readFileSync("./transactions.json");
   const transactions = JSON.parse(transactionsFile);
   return transactions;
+}
+
+// get the balance of an address
+export function getAddressBalance(address) {
+  const blockchain = getBlockchain();
+  let balance = 0;
+
+  // loop through blocks
+  for (let i = 1; i < blockchain.length; i++) {
+    const { transactions } = blockchain[i];
+
+    // loop through transactions
+    for (let j = 0; j < transactions.length; j++) {
+      const { fromAddress, toAddress, amount } = transactions[j];
+      // subtract tokens if address is the sender
+      if (fromAddress === address) {
+        balance -= amount;
+      }
+      // add tokens if address is the recipient
+      if (toAddress === address) {
+        balance += amount;
+      }
+    }
+  }
+  return balance;
 }
