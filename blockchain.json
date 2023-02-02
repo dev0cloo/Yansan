@@ -4,166 +4,33 @@
     "previousHash": null
   },
   {
-    "hash": "0.8347530776265089",
-    "previousHash": "0"
-  },
-  {
-    "hash": "0.9984889654933589",
-    "previousHash": "0.8347530776265089"
-  },
-  {
-    "hash": "0.9372480457582288",
-    "previousHash": "0.9984889654933589"
-  },
-  {
-    "hash": "0.3732633418243443",
-    "previousHash": "0.9372480457582288",
-    "data": {
-      "fromAddress": "Me",
-      "toAddress": "You",
-      "amount": 10
-    }
-  },
-  {
-    "hash": "0.9644921223951555",
-    "previousHash": "0.3732633418243443",
-    "data": {
-      "fromAddress": "Me",
-      "toAddress": "You",
-      "amount": 20
-    }
-  },
-  {
-    "hash": "0.06621814543117921",
-    "previousHash": "0.9644921223951555",
-    "data": {
-      "fromAddress": "Me",
-      "toAddress": "You",
-      "amount": 30
-    }
-  },
-  {
-    "hash": "0.4660152848575647",
-    "previousHash": "0.06621814543117921",
-    "transactions": [
-      {
-        "fromAddress": "You",
-        "toAddress": "Me",
-        "amount": 15
-      },
-      {
-        "fromAddress": "You",
-        "toAddress": "Me",
-        "amount": 25
-      },
-      {
-        "fromAddress": "You",
-        "toAddress": "Me",
-        "amount": 35
-      }
-    ]
-  },
-  {
-    "hash": "0.6316416705629884",
-    "previousHash": "0.4660152848575647",
-    "transactions": [
-      {
-        "fromAddress": "Me",
-        "toAddress": "You",
-        "amount": 2
-      },
-      {
-        "fromAddress": "Me",
-        "toAddress": "You",
-        "amount": 4
-      },
-      {
-        "fromAddress": "Me",
-        "toAddress": "You",
-        "amount": 6
-      }
-    ]
-  },
-  {
-    "hash": "0.0601670966359098",
-    "previousHash": "0.6316416705629884",
-    "transactions": [
-      {
-        "amount": null
-      },
-      {
-        "fromAddress": "ET",
-        "toAddress": "Ma",
-        "amount": 40
-      }
-    ]
-  },
-  {
-    "hash": "0.6837633261257277",
-    "previousHash": "0.0601670966359098",
-    "transactions": [
-      {
-        "fromAddress": "ET",
-        "toAddress": "Ma",
-        "amount": 40
-      },
-      {
-        "fromAddress": "ET",
-        "toAddress": "Ma",
-        "amount": 400
-      }
-    ]
-  },
-  {
-    "hash": "0.19656945064841813",
-    "previousHash": "0.6837633261257277",
-    "transactions": [
-      {
-        "fromAddress": "ET",
-        "toAddress": "Ma",
-        "amount": 400
-      },
-      {
-        "fromAddress": "ET",
-        "toAddress": "Ma",
-        "amount": 40
-      },
-      {
-        "fromAddress": "ET",
-        "toAddress": "Ma",
-        "amount": 4
-      }
-    ]
-  },
-  {
-    "hash": "0.11075109241477499",
-    "previousHash": "0.19656945064841813",
-    "transactions": [
-      {
-        "fromAddress": "ET",
-        "toAddress": "Ma",
-        "amount": 400
-      },
-      {
-        "fromAddress": "ET",
-        "toAddress": "Ma",
-        "amount": 4
-      },
-      {
-        "fromAddress": "ET",
-        "toAddress": "Ma",
-        "amount": 40
-      }
-    ]
-  },
-  {
-    "hash": "0.3050247406731952",
-    "previousHash": "0.11075109241477499",
+    "nonce": 39,
+    "hash": "009b0ffdf8024c9fad6291d8b00915d23965a6ed55ba8ed680549076152705fb",
+    "previousHash": "0",
     "transactions": []
   },
   {
-    "hash": "0.11882081728477956",
-    "previousHash": "0.3050247406731952",
-    "transactions": []
+    "nonce": 930,
+    "hash": "00c23c20fec7b56b1f9701c07387d8f501e1901b467ca414e2a4d23712dd845f",
+    "previousHash": "009b0ffdf8024c9fad6291d8b00915d23965a6ed55ba8ed680549076152705fb",
+    "transactions": [
+      {
+        "fromAddress": null,
+        "toAddress": "Me",
+        "amount": 50
+      }
+    ]
+  },
+  {
+    "nonce": 631,
+    "hash": "00643ede60709a48380c864ce92e650a69c36b845f15d1f36a02a99f80c0dabb",
+    "previousHash": "00c23c20fec7b56b1f9701c07387d8f501e1901b467ca414e2a4d23712dd845f",
+    "transactions": [
+      {
+        "fromAddress": null,
+        "toAddress": "Me",
+        "amount": 50
+      }
+    ]
   }
 ]

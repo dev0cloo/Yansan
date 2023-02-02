@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "fromAddress": null,
+    "toAddress": "Me",
+    "amount": 50
+  }
+]
