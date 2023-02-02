@@ -1,0 +1,21 @@
+{
+  "name": "learn-digital-ledgers-by-building-a-blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add-block.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev0cloo/Yansan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dev0cloo/Yansan/issues"
+  },
+  "homepage": "https://github.com/dev0cloo/Yansan#readme"
+}

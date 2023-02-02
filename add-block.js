@@ -21,11 +21,17 @@ const newBlock = {
   transactions
 };
 
+console.log(`Adding transactions to new block`);
+
 // adds the newblock to the blockchain
 blockchain.push(newBlock);
 
+console.log('Adding new block to blockchain');
+
 // mine new block
 writeBlockchain(blockchain);
+
+console.log('Resetting Transaction pool');
 
 // resets transaction pool after each new block is mined
 writeTransactions([]);
