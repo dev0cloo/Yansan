@@ -6,13 +6,13 @@ import {
   writeTransactions,
 } from "./blockchain-helpers.js";
 
-//stores the current state of the blockchain
+//store the current state of the blockchain
 const blockchain = getBlockchain();
 
-// gets the last block
+// get the last block
 const previousBlock = blockchain[blockchain.length - 1];
 
-// gets transactions from transaction pool
+// get transactions from transaction pool
 const transactions = getTransactions();
 
 let nonce = 0;
@@ -43,14 +43,14 @@ const newBlock = {
 
 console.log(`Adding transactions to new block`);
 
-// adds the new block to the blockchain
+// add the new block to the blockchain
 blockchain.push(newBlock);
 
 // mine new block
 writeBlockchain(blockchain);
 console.log("mining new block to blockchain");
 
-// rewards miner after each new block is mined
+// reward miner after each new block is mined
 const fromAddress = null;
 const toAddress = "Me";
 const amount = 50;
