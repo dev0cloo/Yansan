@@ -52,10 +52,10 @@ writeBlockchain(blockchain);
 console.log("Mining new block to blockchain");
 
 // reward miner after each new block is mined
-const rewardMiner = getWalletAddress("Me");
+const miner = getWalletAddress("Me");
 const rewardTransaction = {
   fromAddress: null,
-  toAddress: rewardMiner,
+  toAddress: miner,
   amount: 100,
 };
 writeTransactions([rewardTransaction]);
