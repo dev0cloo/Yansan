@@ -4,6 +4,7 @@ import {
   writeBlockchain,
   getTransactions,
   writeTransactions,
+  getWalletAddress,
 } from "./blockchain-helpers.js";
 
 //store the current state of the blockchain
@@ -51,6 +52,11 @@ writeBlockchain(blockchain);
 console.log("Mining new block to blockchain");
 
 // reward miner after each new block is mined
-const rewardTransaction = { fromAddress: null, toAddress: "Me", amount: 50 };
+const rewardMiner = getWalletAddress("Me");
+const rewardTransaction = {
+  fromAddress: null,
+  toAddress: rewardMiner,
+  amount: 100,
+};
 writeTransactions([rewardTransaction]);
 console.log("Rewarding Miner and Resetting Transaction pool");

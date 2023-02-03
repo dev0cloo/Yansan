@@ -1,6 +1,7 @@
-import { getAddressBalance } from "./blockchain-helpers.js";
+import { getAddressBalance, getWalletAddress } from "./blockchain-helpers.js";
 
-const address = process.argv[2];
+const name = process.argv[2];
+const address = getWalletAddress(name);
 const addressBalance = getAddressBalance(address);
 
-console.log(`Account balance of ${address} is: ${addressBalance}`);
+console.log(`Account balance of ${name} is: ${addressBalance}`);

@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "fromAddress": null,
+    "toAddress": "045862855c9648cca9d0a28083745b73749619bc5d662f43cead992b32aa25897dc1de32125b788014244a66e5584bf919",
+    "amount": 100
+  }
+]
