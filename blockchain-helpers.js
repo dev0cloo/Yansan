@@ -1,6 +1,5 @@
 import { writeFileSync, readFileSync } from "fs";
 import sha256 from "crypto-js/sha256.js";
-import { get } from "http";
 
 // modifies the current state of the blockchain
 export function writeBlockchain(blockchain) {

@@ -17,7 +17,7 @@ const transactions = getTransactions();
 
 let nonce = 0;
 
-// create a unique hash
+// create a unique hash using SHA-256 algorithm
 let hash = sha256(
   nonce + previousBlock.hash + JSON.stringify(transactions)
 ).toString();
