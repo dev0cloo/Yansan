@@ -16,7 +16,7 @@ const newWalletName = process.argv[2];
 const walletsFile = readFileSync("./wallets.json");
 let wallets = JSON.parse(walletsFile);
 
-// check if wallet name already exists
+// check if wallet name already existss
 if (!wallets.hasOwnProperty(newWalletName)) {
   wallets[newWalletName] = publicKey;
   wallets = JSON.stringify(wallets, null, 2);
