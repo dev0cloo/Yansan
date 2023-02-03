@@ -5,9 +5,9 @@ import { readFileSync, writeFileSync } from "fs";
 const ec = new EC.ec("p192");
 // generate keypair
 const keyPair = ec.genKeyPair();
-// get public key from keypair
+// generate public key from keypair
 const publicKey = keyPair.getPublic("hex");
-// get private key from keypair
+// generate private key from keypair
 const privateKey = keyPair.getPrivate("hex");
 
 // new wallet name defined in terminal; if left empty defaults to undefined
@@ -17,15 +17,21 @@ const newWalletName = process.argv[2];
 const walletsFile = readFileSync("./wallets.json");
 let wallets = JSON.parse(walletsFile);
 
-// check if wallet name already existss
+// check if wallet name already exists
 if (!wallets.hasOwnProperty(newWalletName)) {
   wallets[newWalletName] = publicKey;
   wallets = JSON.stringify(wallets, null, 2);
   writeFileSync("./wallets.json", wallets);
-  console.log(`Wallet ${newWalletName} created`);
-  console.log(`Public Key: ${publicKey} with Private Key: ${privateKey}`);
+  console.log(`New Wallet named ${newWalletName} created`);
+  console.log(`Private Key: ${privateKey}
+Public Key: ${publicKey}`);
+  console.log(
+    "Please make a copy of your private key. You will need it to send transactions."
+  );
 } else {
-  console.log(`Wallet name already exists. Please use another name.`);
+  console.log(
+    `Wallet name already exists. Please try again with another name.`
+  );
   console.log(
     `${newWalletName} exists at public address: ${wallets[newWalletName]}`
   );

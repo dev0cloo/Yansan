@@ -92,3 +92,9 @@ export function getAddressBalance(address) {
   }
   return balance;
 }
+
+export function getWalletAddress(name) {
+  const walletsFile = readFileSync("./wallets.json");
+  const wallets = JSON.parse(walletsFile);
+  return wallets[name];
+}
