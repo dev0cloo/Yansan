@@ -13,6 +13,7 @@ const privateKey = keyPair.getPrivate("hex");
 // new wallet name defined in terminal; if left empty defaults to undefined
 const newWalletName = process.argv[2];
 
+// fetches current wallets stored on blockchain
 const walletsFile = readFileSync("./wallets.json");
 let wallets = JSON.parse(walletsFile);
 
