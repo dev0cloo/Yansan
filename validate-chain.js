@@ -5,7 +5,6 @@ const blockchain = getBlockchain();
 
 // validate the blockchain
 if (!isValidChain()) {
-  // isValidChain();
   console.log("Yansan Chain is invalid");
 } else {
   console.log(`Yansan Chain is valid.
