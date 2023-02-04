@@ -1,7 +1,10 @@
 import { writeFileSync, readFileSync } from "fs";
 import sha256 from "crypto-js/sha256.js";
+import EC from "elliptic";
 
-// modifies the current state of the blockchain
+const ec = new EC.ec("p192");
+
+// modify the current state of the blockchain
 export function writeBlockchain(blockchain) {
   const blockchainString = JSON.stringify(blockchain, null, 2);
   writeFileSync("./blockchain.json", blockchainString);
@@ -38,15 +41,22 @@ export function isValidChain() {
 
     // loop through transactions
     for (let j = 0; j < transactions.length; j++) {
-      const { hash, fromAddress, toAddress, amount } = transactions[j];
+      const { hash, fromAddress, toAddress, amount, signature } =
+        transactions[j];
       const testTransactionHash = sha256(
         fromAddress + toAddress + amount
       ).toString();
 
       // don't validate rewarded transactions
-      if (fromAddress != null) {
+      if (fromAddress !== null) {
         // validate transaction hash
         if (hash !== testTransactionHash) {
+          return false;
+        }
+        // validate transaction signature
+        const publicKeyPair = ec.keyFromPublic(fromAddress, "hex");
+        const verifiedSignature = publicKeyPair.verify(hash, signature);
+        if (!verifiedSignature) {
           return false;
         }
       }
@@ -93,8 +103,40 @@ export function getAddressBalance(address) {
   return balance;
 }
 
+// get wallet address from wallet name
 export function getWalletAddress(name) {
   const walletsFile = readFileSync("./wallets.json");
   const wallets = JSON.parse(walletsFile);
   return wallets[name];
+}
+
+// create default wallet on blockchain initialization
+export function defaultWallet() {
+  // use p192 curve to create keypairs
+  const ec = new EC.ec("p192");
+  // generate keypair
+  const keyPair = ec.genKeyPair();
+  // generate public key from keypair
+  const publicKey = keyPair.getPublic("hex");
+  // generate private key from keypair
+  const privateKey = keyPair.getPrivate("hex");
+  // fetches current wallets stored on blockchain
+  const walletsFile = readFileSync("./wallets.json");
+  let wallets = JSON.parse(walletsFile);
+
+  wallets["Me"] = publicKey;
+  wallets = JSON.stringify(wallets);
+  writeFileSync("./wallets.json", wallets);
+  writeFileSync(
+    "./private-keys.txt",
+    `
+    Me: ${privateKey}`
+  );
+  console.log(`Default Wallet named Me created`);
+  console.log(`Private Key: ${privateKey}
+Public Key: ${publicKey}`);
+  console.log(
+    `A copy of the private key has been saved to private-keys.txt for easier access. 
+You will need the private key to send transactions.`
+  );
 }

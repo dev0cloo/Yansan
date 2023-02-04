@@ -1,4 +1,8 @@
-import { writeBlockchain, writeTransactions } from "./blockchain-helpers.js";
+import {
+  writeBlockchain,
+  writeTransactions,
+  defaultWallet,
+} from "./blockchain-helpers.js";
 import { writeFileSync } from "fs";
 
 //first block for the blockchain
@@ -13,5 +17,13 @@ writeBlockchain(blockchain);
 // initialise an empty transaction pool for blockchain
 writeTransactions([]);
 
-// initialise blockchain with no wallets
+// clear wallets
 writeFileSync("./wallets.json", JSON.stringify({}));
+
+// clear private keys
+writeFileSync("./private-keys.txt", "");
+
+console.log("Yansan Blockchain initialised.");
+
+// create default wallet
+defaultWallet();

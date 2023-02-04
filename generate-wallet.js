@@ -9,24 +9,32 @@ const keyPair = ec.genKeyPair();
 const publicKey = keyPair.getPublic("hex");
 // generate private key from keypair
 const privateKey = keyPair.getPrivate("hex");
-
-// new wallet name defined in terminal; if left empty defaults to undefined
-const newWalletName = process.argv[2];
-
 // fetches current wallets stored on blockchain
 const walletsFile = readFileSync("./wallets.json");
 let wallets = JSON.parse(walletsFile);
+
+// new wallet name defined in terminal; if left empty defaults to undefined
+const newWalletName = process.argv[2];
 
 // check if wallet name already exists
 if (!wallets.hasOwnProperty(newWalletName)) {
   wallets[newWalletName] = publicKey;
   wallets = JSON.stringify(wallets, null, 2);
   writeFileSync("./wallets.json", wallets);
+  writeFileSync(
+    "./private-keys.txt",
+    `
+${newWalletName}: ${privateKey}`,
+    {
+      flag: "a+",
+    }
+  );
   console.log(`New Wallet named ${newWalletName} created`);
   console.log(`Private Key: ${privateKey}
 Public Key: ${publicKey}`);
   console.log(
-    "Please make a copy of your private key. You will need it to send transactions."
+    `A copy of the private key has been saved to private-keys.txt for easier access. 
+You will need the private key to send transactions.`
   );
 } else {
   console.log(

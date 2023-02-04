@@ -42,14 +42,15 @@ const newBlock = {
   transactions,
 };
 
-console.log(`Adding transactions to new block`);
+console.log(`Adding transactions to new block.`);
 
 // add the new block to the blockchain
 blockchain.push(newBlock);
 
 // mine new block
 writeBlockchain(blockchain);
-console.log("Mining new block to blockchain");
+console.log(`Mining new block to blockchain.
+Block successfully mined.`);
 
 // reward miner after each new block is mined
 const miner = getWalletAddress("Me");
@@ -60,3 +61,6 @@ const rewardTransaction = {
 };
 writeTransactions([rewardTransaction]);
 console.log("Rewarding Miner and Resetting Transaction pool");
+
+console.log(`Hash of new block: ${newBlock.hash}`);
+console.log(`The Blockchain has ${blockchain.length} blocks.`);
