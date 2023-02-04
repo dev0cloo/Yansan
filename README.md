@@ -5,11 +5,11 @@ Yansan is a blockchain platform written in JavaScript, designed to provide hands
 ## Features
 
 - Uses SHA-256 hash algorithm. (Same as Bitcoin)
-- Simulate transactions between users.
+- Create wallets.
+- Simulate transactions between wallets.
 - Mine new blocks to the blockchain.
 - Reward miners with tokens.
-- Check user address balance.
-- Validate transactions on the blockchain.
+- Check wallet address balance.
 - Validate the integrity of the blockchain.
 
 ## Requirements
