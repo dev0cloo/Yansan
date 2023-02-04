@@ -1,8 +1,14 @@
-import { isValidChain } from './blockchain-helpers.js';
+import { isValidChain, getBlockchain } from "./blockchain-helpers.js";
 
-// checks the validity of the blockchain
-if (isValidChain()) {
-  console.log('Chain is valid');
+// get current blockchain state
+const blockchain = getBlockchain();
+
+// validate the blockchain
+if (!isValidChain()) {
+  // isValidChain();
+  console.log("Yansan Chain is invalid");
 } else {
-  console.log('Chain is not valid');
+  console.log(`Yansan Chain is valid.
+The blockchain has ${blockchain.length} blocks.
+The last block hash is ${blockchain[blockchain.length - 1].hash}`);
 }

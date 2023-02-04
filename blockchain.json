@@ -2,42 +2,5 @@
   {
     "hash": "0",
     "previousHash": null
-  },
-  {
-    "nonce": 39,
-    "hash": "009b0ffdf8024c9fad6291d8b00915d23965a6ed55ba8ed680549076152705fb",
-    "previousHash": "0",
-    "transactions": []
-  },
-  {
-    "nonce": 61,
-    "hash": "000fa7a9c7624b8476defc8127e6841c5458d4588c88ac4c822d93599f022237",
-    "previousHash": "009b0ffdf8024c9fad6291d8b00915d23965a6ed55ba8ed680549076152705fb",
-    "transactions": [
-      {
-        "fromAddress": null,
-        "toAddress": "047f91c21f809ca6fb081d25d300860878c178ec86d0cd77734abacbb31f26053ffb7c6dad81281c670f1f474a9a7c424c",
-        "amount": 100
-      }
-    ]
-  },
-  {
-    "nonce": 156,
-    "hash": "00f6113cb25a4d9f17ce28bf6d53a6bcf24ee5f1535f87c8d8a7105ca2c3ac54",
-    "previousHash": "000fa7a9c7624b8476defc8127e6841c5458d4588c88ac4c822d93599f022237",
-    "transactions": [
-      {
-        "fromAddress": null,
-        "toAddress": "047f91c21f809ca6fb081d25d300860878c178ec86d0cd77734abacbb31f26053ffb7c6dad81281c670f1f474a9a7c424c",
-        "amount": 100
-      },
-      {
-        "hash": "0fa5d946841461868fc66a69bd8f20bef9b13b5f7813952e662e24fe16ffccae",
-        "fromAddress": "047f91c21f809ca6fb081d25d300860878c178ec86d0cd77734abacbb31f26053ffb7c6dad81281c670f1f474a9a7c424c",
-        "toAddress": "04336aa738fe5b1b0396b0e9ccdcb1017be5cbba726d6a2825b8f279b986c73891cb98667d8c3ac06d534c938637b8c9f3",
-        "amount": 20,
-        "signature": "3036021900ffa51c419d7e333733dc46206ea49bded039d4cf82037119021900c9b45404c9d723bccd7ba3f32efc5a263bf4b3fae12e63f0"
-      }
-    ]
   }
 ]

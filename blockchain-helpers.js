@@ -28,7 +28,7 @@ export function isValidChain() {
 
     // validate previous block hash
     if (previousHash !== previousBlock.hash) {
-      return false;
+      return console.log("Invalid previous block hash");
     }
 
     // validate current block hash
@@ -36,7 +36,7 @@ export function isValidChain() {
       nonce + previousBlock.hash + JSON.stringify(transactions)
     ).toString();
     if (hash !== testBlockHash) {
-      return false;
+      return console.log("Invalid current block hash");
     }
 
     // loop through transactions
@@ -51,13 +51,13 @@ export function isValidChain() {
       if (fromAddress !== null) {
         // validate transaction hash
         if (hash !== testTransactionHash) {
-          return false;
+          return console.log("Invalid transaction hash");
         }
         // validate transaction signature
         const publicKeyPair = ec.keyFromPublic(fromAddress, "hex");
         const verifiedSignature = publicKeyPair.verify(hash, signature);
         if (!verifiedSignature) {
-          return false;
+          return console.log("Invalid transaction signature");
         }
       }
     }
